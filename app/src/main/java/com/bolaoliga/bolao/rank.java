@@ -67,7 +67,7 @@ public class rank extends AppCompatActivity {
 
                     ss.append("1. ");
                     ss.append(usuarios.get(0).nome);
-                    ss.append(" ");
+                    ss.append("   ");
                     ss.append(usuarios.get(0).pontos);
 
                     p1.setText(ss);
@@ -75,7 +75,7 @@ public class rank extends AppCompatActivity {
                     ss = new StringBuilder();
                     ss.append("2. ");
                     ss.append(usuarios.get(1).nome);
-                    ss.append(" ");
+                    ss.append("   ");
                     ss.append(usuarios.get(1).pontos);
 
                     p2.setText(ss);
@@ -83,7 +83,7 @@ public class rank extends AppCompatActivity {
                     ss = new StringBuilder();
                     ss.append("3. ");
                     ss.append(usuarios.get(2).nome);
-                    ss.append(" ");
+                    ss.append("   ");
                     ss.append(usuarios.get(2).pontos);
 
                     p3.setText(ss);
@@ -91,7 +91,7 @@ public class rank extends AppCompatActivity {
                     ss = new StringBuilder();
                     ss.append("4. ");
                     ss.append(usuarios.get(3).nome);
-                    ss.append(" ");
+                    ss.append("   ");
                     ss.append(usuarios.get(3).pontos);
 
                     p4.setText(ss);
@@ -99,7 +99,7 @@ public class rank extends AppCompatActivity {
                     ss = new StringBuilder();
                     ss.append("5. ");
                     ss.append(usuarios.get(4).nome);
-                    ss.append(" ");
+                    ss.append("   ");
                     ss.append(usuarios.get(4).pontos);
 
                     p5.setText(ss);
@@ -107,7 +107,7 @@ public class rank extends AppCompatActivity {
                     ss = new StringBuilder();
                     ss.append("6. ");
                     ss.append(usuarios.get(5).nome);
-                    ss.append(" ");
+                    ss.append("   ");
                     ss.append(usuarios.get(5).pontos);
 
                     p6.setText(ss);
@@ -115,7 +115,7 @@ public class rank extends AppCompatActivity {
                     ss = new StringBuilder();
                     ss.append("7. ");
                     ss.append(usuarios.get(6).nome);
-                    ss.append(" ");
+                    ss.append("   ");
                     ss.append(usuarios.get(6).pontos);
 
                     p7.setText(ss);
@@ -123,7 +123,7 @@ public class rank extends AppCompatActivity {
                     ss = new StringBuilder();
                     ss.append("8. ");
                     ss.append(usuarios.get(7).nome);
-                    ss.append(" ");
+                    ss.append("   ");
                     ss.append(usuarios.get(7).pontos);
 
                     p8.setText(ss);

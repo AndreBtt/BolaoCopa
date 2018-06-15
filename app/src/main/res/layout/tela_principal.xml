@@ -18,6 +18,7 @@
             android:layout_marginTop="50dp"
             android:textSize="30dp"
             android:text="Fazer minha aposta de merda"
+            android:textColor="@color/preto"
             android:gravity="center"
             />
 
@@ -28,6 +29,7 @@
             android:layout_marginTop="50dp"
             android:textSize="30dp"
             android:text="Ver se eu to em último"
+            android:textColor="@color/preto"
             android:gravity="center"
             />
 
@@ -36,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:textColor="@color/preto"
             android:textSize="30dp"
             android:text="Apostas dos meus coleguinhas"
             android:gravity="center"
@@ -47,7 +50,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:textSize="30dp"
-            android:text="Configuracoes, aqui tu nao entra troxa"
+            android:textColor="@color/preto"
+
+            android:text="Configuracoes, aqui tu nao entra babaca"
             android:gravity="center"
             />
 
@@ -56,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:textColor="@color/preto"
             android:textSize="30dp"
             android:text="Sair da minha conta, faz nem sentido isso"
             android:gravity="center"

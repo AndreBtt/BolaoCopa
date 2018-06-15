@@ -23,6 +23,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
+                android:textColor="@color/preto"
                 />
 
         </LinearLayout>
@@ -53,6 +54,7 @@
                     android:textSize="25dp"
                     android:gravity="center"
                     android:text="Time1"
+                    android:textColor="@color/preto"
                     />
 
                 <EditText
@@ -87,6 +89,7 @@
                     android:textSize="25dp"
                     android:gravity="center"
                     android:text="Time2"
+                    android:textColor="@color/preto"
                     />
 
                 <EditText

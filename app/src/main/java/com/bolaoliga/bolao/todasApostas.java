@@ -96,7 +96,7 @@ public class todasApostas extends AppCompatActivity {
                         ss.append(" x ");
                         ss.append(usuarios.get(0).time2);
                     }
-                    else ss.append(" Troxa n votou");
+                    else ss.append(" - Troxa n votou");
 
                     p1.setText(ss);
 
@@ -109,7 +109,7 @@ public class todasApostas extends AppCompatActivity {
                         ss.append(" x ");
                         ss.append(usuarios.get(1).time2);
                     }
-                    else ss.append(" Troxa n votou");
+                    else ss.append(" - Troxa n votou");
 
                     p2.setText(ss);
 
@@ -122,7 +122,7 @@ public class todasApostas extends AppCompatActivity {
                         ss.append(" x ");
                         ss.append(usuarios.get(2).time2);
                     }
-                    else ss.append(" Troxa n votou");
+                    else ss.append(" - Troxa n votou");
 
                     p3.setText(ss);
 
@@ -135,7 +135,7 @@ public class todasApostas extends AppCompatActivity {
                         ss.append(" x ");
                         ss.append(usuarios.get(3).time2);
                     }
-                    else ss.append(" Troxa n votou");
+                    else ss.append(" - Troxa n votou");
 
                     p4.setText(ss);
 
@@ -148,7 +148,7 @@ public class todasApostas extends AppCompatActivity {
                         ss.append(" x ");
                         ss.append(usuarios.get(4).time2);
                     }
-                    else ss.append(" Troxa n votou");
+                    else ss.append(" - Troxa n votou");
 
                     p5.setText(ss);
 
@@ -161,7 +161,7 @@ public class todasApostas extends AppCompatActivity {
                         ss.append(" x ");
                         ss.append(usuarios.get(5).time2);
                     }
-                    else ss.append(" Troxa n votou");
+                    else ss.append(" - Troxa n votou");
 
                     p6.setText(ss);
 
@@ -174,7 +174,7 @@ public class todasApostas extends AppCompatActivity {
                         ss.append(" x ");
                         ss.append(usuarios.get(6).time2);
                     }
-                    else ss.append(" Troxa n votou");
+                    else ss.append(" - Troxa n votou");
 
                     p7.setText(ss);
 
@@ -187,7 +187,7 @@ public class todasApostas extends AppCompatActivity {
                         ss.append(" x ");
                         ss.append(usuarios.get(7).time2);
                     }
-                    else ss.append(" Troxa n votou");
+                    else ss.append(" - Troxa n votou");
 
                     p8.setText(ss);
 
