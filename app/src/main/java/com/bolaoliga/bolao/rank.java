@@ -52,7 +52,7 @@ public class rank extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Usuario novo = dataSnapshot.getValue(Usuario.class);
-                usuarios.add(novo);
+                if(novo.nome != null && !novo.nome.isEmpty()) usuarios.add(novo);
 
                 if(usuarios.size() == 8){
 

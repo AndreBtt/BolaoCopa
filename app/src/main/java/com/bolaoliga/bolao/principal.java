@@ -21,6 +21,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
+import Model.Jogo;
 import Model.Usuario;
 
 public class principal extends AppCompatActivity {
@@ -56,20 +57,15 @@ public class principal extends AppCompatActivity {
                 mBanco.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                        String novo = dataSnapshot.getValue(String.class);
+                        Jogo novo = dataSnapshot.getValue(Jogo.class);
 
-                        if(t1.equals("")) t1 = novo;
-                        else {
-                            t2 = novo;
 
-                            Intent proxima_pagina = new Intent(principal.this,todasApostas.class);
+                        Intent proxima_pagina = new Intent(principal.this,todasApostas.class);
 
-                            proxima_pagina.putExtra("t1",t1);
-                            proxima_pagina.putExtra("t2",t2);
+                        proxima_pagina.putExtra("t1",novo.t1);
+                        proxima_pagina.putExtra("t2",novo.t2);
 
-                            startActivity(proxima_pagina);
-                        }
-
+                        startActivity(proxima_pagina);
                     }
 
                     @Override
@@ -113,20 +109,18 @@ public class principal extends AppCompatActivity {
                 mBanco.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                        String novo = dataSnapshot.getValue(String.class);
+                        Jogo novo = dataSnapshot.getValue(Jogo.class);
 
-                        if(t1.equals("")) t1 = novo;
-                        else {
-                            t2 = novo;
+                        Intent proxima_pagina = new Intent(principal.this,aposta.class);
 
-                            Intent proxima_pagina = new Intent(principal.this,aposta.class);
+                        proxima_pagina.putExtra("t1",novo.t1);
+                        proxima_pagina.putExtra("t2",novo.t2);
 
-                            proxima_pagina.putExtra("t1",t1);
-                            proxima_pagina.putExtra("t2",t2);
-
-                            startActivity(proxima_pagina);
+                        if(!novo.fim) startActivity(proxima_pagina);
+                        else{
+                            Toast.makeText(principal.this, "Tu acha que eu sou troxa ?? Quer votar no meio do jogo ??",
+                                    Toast.LENGTH_SHORT).show();
                         }
-
                     }
 
                     @Override

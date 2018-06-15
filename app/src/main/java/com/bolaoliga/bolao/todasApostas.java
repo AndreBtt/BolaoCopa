@@ -64,7 +64,7 @@ public class todasApostas extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Usuario novo = dataSnapshot.getValue(Usuario.class);
-                if(novo.nome != null && !novo.nome.isEmpty())usuarios.add(novo);
+                if(novo.nome != null && !novo.nome.isEmpty()) usuarios.add(novo);
 
                 if(usuarios.size() == 8){
 
@@ -91,9 +91,12 @@ public class todasApostas extends AppCompatActivity {
                     ss.append("");
                     ss.append(usuarios.get(0).nome);
                     ss.append(" ");
-                    ss.append(usuarios.get(0).time1);
-                    ss.append(" x ");
-                    ss.append(usuarios.get(0).time1);
+                    if(usuarios.get(0).voto){
+                        ss.append(usuarios.get(0).time1);
+                        ss.append(" x ");
+                        ss.append(usuarios.get(0).time2);
+                    }
+                    else ss.append(" Troxa n votou");
 
                     p1.setText(ss);
 
@@ -101,9 +104,12 @@ public class todasApostas extends AppCompatActivity {
                     ss.append("");
                     ss.append(usuarios.get(1).nome);
                     ss.append(" ");
-                    ss.append(usuarios.get(1).time1);
-                    ss.append(" x ");
-                    ss.append(usuarios.get(1).time1);
+                    if(usuarios.get(1).voto) {
+                        ss.append(usuarios.get(1).time1);
+                        ss.append(" x ");
+                        ss.append(usuarios.get(1).time2);
+                    }
+                    else ss.append(" Troxa n votou");
 
                     p2.setText(ss);
 
@@ -111,9 +117,12 @@ public class todasApostas extends AppCompatActivity {
                     ss.append("");
                     ss.append(usuarios.get(2).nome);
                     ss.append(" ");
-                    ss.append(usuarios.get(2).time1);
-                    ss.append(" x ");
-                    ss.append(usuarios.get(2).time1);
+                    if(usuarios.get(2).voto) {
+                        ss.append(usuarios.get(2).time1);
+                        ss.append(" x ");
+                        ss.append(usuarios.get(2).time2);
+                    }
+                    else ss.append(" Troxa n votou");
 
                     p3.setText(ss);
 
@@ -121,9 +130,12 @@ public class todasApostas extends AppCompatActivity {
                     ss.append("");
                     ss.append(usuarios.get(3).nome);
                     ss.append(" ");
-                    ss.append(usuarios.get(3).time1);
-                    ss.append(" x ");
-                    ss.append(usuarios.get(3).time1);
+                    if(usuarios.get(3).voto) {
+                        ss.append(usuarios.get(3).time1);
+                        ss.append(" x ");
+                        ss.append(usuarios.get(3).time2);
+                    }
+                    else ss.append(" Troxa n votou");
 
                     p4.setText(ss);
 
@@ -131,9 +143,12 @@ public class todasApostas extends AppCompatActivity {
                     ss.append("");
                     ss.append(usuarios.get(4).nome);
                     ss.append(" ");
-                    ss.append(usuarios.get(4).time1);
-                    ss.append(" x ");
-                    ss.append(usuarios.get(4).time1);
+                    if(usuarios.get(4).voto) {
+                        ss.append(usuarios.get(4).time1);
+                        ss.append(" x ");
+                        ss.append(usuarios.get(4).time2);
+                    }
+                    else ss.append(" Troxa n votou");
 
                     p5.setText(ss);
 
@@ -141,9 +156,12 @@ public class todasApostas extends AppCompatActivity {
                     ss.append("");
                     ss.append(usuarios.get(5).nome);
                     ss.append(" ");
-                    ss.append(usuarios.get(5).time1);
-                    ss.append(" x ");
-                    ss.append(usuarios.get(5).time1);
+                    if(usuarios.get(5).voto) {
+                        ss.append(usuarios.get(5).time1);
+                        ss.append(" x ");
+                        ss.append(usuarios.get(5).time2);
+                    }
+                    else ss.append(" Troxa n votou");
 
                     p6.setText(ss);
 
@@ -151,9 +169,12 @@ public class todasApostas extends AppCompatActivity {
                     ss.append("");
                     ss.append(usuarios.get(6).nome);
                     ss.append(" ");
-                    ss.append(usuarios.get(6).time1);
-                    ss.append(" x ");
-                    ss.append(usuarios.get(6).time1);
+                    if(usuarios.get(6).voto) {
+                        ss.append(usuarios.get(6).time1);
+                        ss.append(" x ");
+                        ss.append(usuarios.get(6).time2);
+                    }
+                    else ss.append(" Troxa n votou");
 
                     p7.setText(ss);
 
@@ -161,9 +182,12 @@ public class todasApostas extends AppCompatActivity {
                     ss.append("");
                     ss.append(usuarios.get(7).nome);
                     ss.append(" ");
-                    ss.append(usuarios.get(7).time1);
-                    ss.append(" x ");
-                    ss.append(usuarios.get(7).time1);
+                    if(usuarios.get(7).voto) {
+                        ss.append(usuarios.get(7).time1);
+                        ss.append(" x ");
+                        ss.append(usuarios.get(7).time2);
+                    }
+                    else ss.append(" Troxa n votou");
 
                     p8.setText(ss);
 

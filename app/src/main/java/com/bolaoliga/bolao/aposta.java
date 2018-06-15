@@ -1,6 +1,7 @@
 package com.bolaoliga.bolao;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,7 +36,11 @@ public class aposta extends AppCompatActivity {
 
     private ProgressDialog mProgressDialog;
 
+    private String chave;
+
     private Button sorte,enviar;
+
+    private Usuario usuarioAtual;
 
     private DatabaseReference mBanco = FirebaseDatabase.getInstance().getReference("/Usuario");
 
@@ -79,6 +84,15 @@ public class aposta extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                usuarioAtual.time1 = Integer.parseInt(mGol1.getText().toString());
+
+                usuarioAtual.time2 = Integer.parseInt(mGol2.getText().toString());
+
+                usuarioAtual.voto = true;
+
+                mBanco.child(chave).setValue(usuarioAtual);
+
+                startActivity(new Intent(aposta.this, principal.class));
             }
         });
 
@@ -108,6 +122,10 @@ public class aposta extends AppCompatActivity {
                 Usuario novo = dataSnapshot.getValue(Usuario.class);
 
                 if(novo.email.equals(user.getEmail())){
+
+                    chave = dataSnapshot.getKey();
+
+                    usuarioAtual = novo;
 
                     mGol1.setText(Integer.toString(novo.time1));
                     mGol2.setText(Integer.toString(novo.time2));
