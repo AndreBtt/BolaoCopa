@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "567101408634",
+    "firebase_url": "https://bolao-7c0e2.firebaseio.com",
+    "project_id": "bolao-7c0e2",
+    "storage_bucket": "bolao-7c0e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567101408634:android:d120f2ea4439dc3c",
+        "android_client_info": {
+          "package_name": "com.bolaoliga.bolao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567101408634-hqasigdmok66rr09uirims5gt7l7jugm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bolaoliga.bolao",
+            "certificate_hash": "bc777527eb7b37c8c9ddccdf1ee2c2a533e72d33"
+          }
+        },
+        {
+          "client_id": "567101408634-hpft7uotu0sihgjlapum1ukdbd34va2s.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "567101408634-hpft7uotu0sihgjlapum1ukdbd34va2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvmjw_O7Wri2uQFvKvsBn-biYQm7H_Bas"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567101408634-hpft7uotu0sihgjlapum1ukdbd34va2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

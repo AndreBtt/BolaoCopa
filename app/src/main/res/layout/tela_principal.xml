@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/apostar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="30dp"
+            android:text="Fazer minha aposta de merda"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/ranking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="30dp"
+            android:text="Ver se eu to em último"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/outras_apostas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="30dp"
+            android:text="Apostas dos meus coleguinhas"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/config"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="30dp"
+            android:text="Configuracoes, aqui tu nao entra troxa"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/sair"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="30dp"
+            android:text="Sair da minha conta, faz nem sentido isso"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
