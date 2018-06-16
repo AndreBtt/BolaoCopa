@@ -50,44 +50,7 @@ public class principal extends AppCompatActivity {
         mOutrasApostas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                t1 = "";
-                t2 = "";
-
-                mBanco.addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                        Jogo novo = dataSnapshot.getValue(Jogo.class);
-
-
-                        Intent proxima_pagina = new Intent(principal.this,todasApostas.class);
-
-                        proxima_pagina.putExtra("t1",novo.t1);
-                        proxima_pagina.putExtra("t2",novo.t2);
-
-                        startActivity(proxima_pagina);
-                    }
-
-                    @Override
-                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-                    }
-
-                    @Override
-                    public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                    }
-
-                    @Override
-                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
+                startActivity(new Intent(principal.this, preTodasApostas.class));
             }
         });
 
@@ -102,49 +65,7 @@ public class principal extends AppCompatActivity {
         mAposta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                t1 = "";
-                t2 = "";
-
-                mBanco.addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                        Jogo novo = dataSnapshot.getValue(Jogo.class);
-
-                        Intent proxima_pagina = new Intent(principal.this,aposta.class);
-
-                        proxima_pagina.putExtra("t1",novo.t1);
-                        proxima_pagina.putExtra("t2",novo.t2);
-
-                        if(!novo.fim) startActivity(proxima_pagina);
-                        else{
-                            Toast.makeText(principal.this, "Tu acha que eu sou troxa ?? Quer votar no meio do jogo ??",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-                    }
-
-                    @Override
-                    public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                    }
-
-                    @Override
-                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-
+                startActivity(new Intent(principal.this, preAposta.class));
             }
         });
 

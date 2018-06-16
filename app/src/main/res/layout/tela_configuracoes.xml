@@ -11,6 +11,14 @@
         android:orientation="vertical"
         >
 
+        <EditText
+            android:id="@+id/numero"
+            android:text="num"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:inputType="number"/>
+
         <Button
             android:id="@+id/fim"
             android:layout_width="wrap_content"
@@ -22,7 +30,7 @@
 
         <EditText
             android:id="@+id/g1"
-            android:text="gol 1"
+            android:text="t1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="50dp"
@@ -30,7 +38,7 @@
 
         <EditText
             android:id="@+id/g2"
-            android:text="gol 2"
+            android:text="t2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="50dp"

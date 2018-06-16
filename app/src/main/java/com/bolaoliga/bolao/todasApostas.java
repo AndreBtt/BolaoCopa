@@ -30,6 +30,8 @@ public class todasApostas extends AppCompatActivity {
 
     private String t1,t2;
 
+    private int numeroJogo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +47,12 @@ public class todasApostas extends AppCompatActivity {
 
         t1 = "";
         t2 = "";
+        numeroJogo = 0;
 
         if(b != null){
             t1 = b.getString("t1");
             t2 = b.getString("t2");
+            numeroJogo = b.getInt("numeroJogo");
         }
 
         p1 = findViewById(R.id.p1);
@@ -86,113 +90,439 @@ public class todasApostas extends AppCompatActivity {
                         }
                     });
 
-                    ss = new StringBuilder();
+                    if(numeroJogo == 1){
 
-                    ss.append("");
-                    ss.append(usuarios.get(0).nome);
-                    ss.append(" ");
-                    if(usuarios.get(0).voto){
-                        ss.append(usuarios.get(0).time1);
-                        ss.append(" x ");
-                        ss.append(usuarios.get(0).time2);
+                        ss = new StringBuilder();
+
+                        ss.append("");
+                        ss.append(usuarios.get(0).nome);
+                        ss.append(" ");
+                        if(usuarios.get(0).jogo1.voto){
+                            ss.append(usuarios.get(0).jogo1.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(0).jogo1.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p1.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(1).nome);
+                        ss.append(" ");
+                        if(usuarios.get(1).jogo1.voto){
+                            ss.append(usuarios.get(1).jogo1.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(1).jogo1.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p2.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(2).nome);
+                        ss.append(" ");
+                        if(usuarios.get(2).jogo1.voto){
+                            ss.append(usuarios.get(2).jogo1.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(2).jogo1.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p3.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(3).nome);
+                        ss.append(" ");
+                        if(usuarios.get(3).jogo1.voto){
+                            ss.append(usuarios.get(3).jogo1.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(3).jogo1.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p4.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(4).nome);
+                        ss.append(" ");
+                        if(usuarios.get(4).jogo1.voto){
+                            ss.append(usuarios.get(4).jogo1.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(4).jogo1.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p5.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(5).nome);
+                        ss.append(" ");
+                        if(usuarios.get(5).jogo1.voto){
+                            ss.append(usuarios.get(5).jogo1.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(5).jogo1.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p6.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(6).nome);
+                        ss.append(" ");
+                        if(usuarios.get(6).jogo1.voto){
+                            ss.append(usuarios.get(6).jogo1.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(6).jogo1.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p7.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(7).nome);
+                        ss.append(" ");
+                        if(usuarios.get(7).jogo1.voto){
+                            ss.append(usuarios.get(7).jogo1.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(7).jogo1.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p8.setText(ss);
                     }
-                    else ss.append(" - Troxa n votou");
 
-                    p1.setText(ss);
+                    if(numeroJogo == 2){
 
-                    ss = new StringBuilder();
-                    ss.append("");
-                    ss.append(usuarios.get(1).nome);
-                    ss.append(" ");
-                    if(usuarios.get(1).voto) {
-                        ss.append(usuarios.get(1).time1);
-                        ss.append(" x ");
-                        ss.append(usuarios.get(1).time2);
+                        ss = new StringBuilder();
+
+                        ss.append("");
+                        ss.append(usuarios.get(0).nome);
+                        ss.append(" ");
+                        if(usuarios.get(0).jogo2.voto){
+                            ss.append(usuarios.get(0).jogo2.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(0).jogo2.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p1.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(1).nome);
+                        ss.append(" ");
+                        if(usuarios.get(1).jogo2.voto){
+                            ss.append(usuarios.get(1).jogo2.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(1).jogo2.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p2.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(2).nome);
+                        ss.append(" ");
+                        if(usuarios.get(2).jogo2.voto){
+                            ss.append(usuarios.get(2).jogo2.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(2).jogo2.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p3.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(3).nome);
+                        ss.append(" ");
+                        if(usuarios.get(3).jogo2.voto){
+                            ss.append(usuarios.get(3).jogo2.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(3).jogo2.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p4.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(4).nome);
+                        ss.append(" ");
+                        if(usuarios.get(4).jogo2.voto){
+                            ss.append(usuarios.get(4).jogo2.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(4).jogo2.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p5.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(5).nome);
+                        ss.append(" ");
+                        if(usuarios.get(5).jogo2.voto){
+                            ss.append(usuarios.get(5).jogo2.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(5).jogo2.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p6.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(6).nome);
+                        ss.append(" ");
+                        if(usuarios.get(6).jogo2.voto){
+                            ss.append(usuarios.get(6).jogo2.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(6).jogo2.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p7.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(7).nome);
+                        ss.append(" ");
+                        if(usuarios.get(7).jogo2.voto){
+                            ss.append(usuarios.get(7).jogo2.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(7).jogo2.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p8.setText(ss);
                     }
-                    else ss.append(" - Troxa n votou");
 
-                    p2.setText(ss);
+                    if(numeroJogo == 3){
 
-                    ss = new StringBuilder();
-                    ss.append("");
-                    ss.append(usuarios.get(2).nome);
-                    ss.append(" ");
-                    if(usuarios.get(2).voto) {
-                        ss.append(usuarios.get(2).time1);
-                        ss.append(" x ");
-                        ss.append(usuarios.get(2).time2);
+                        ss = new StringBuilder();
+
+                        ss.append("");
+                        ss.append(usuarios.get(0).nome);
+                        ss.append(" ");
+                        if(usuarios.get(0).jogo3.voto){
+                            ss.append(usuarios.get(0).jogo3.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(0).jogo3.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p1.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(1).nome);
+                        ss.append(" ");
+                        if(usuarios.get(1).jogo3.voto){
+                            ss.append(usuarios.get(1).jogo3.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(1).jogo3.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p2.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(2).nome);
+                        ss.append(" ");
+                        if(usuarios.get(2).jogo3.voto){
+                            ss.append(usuarios.get(2).jogo3.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(2).jogo3.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p3.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(3).nome);
+                        ss.append(" ");
+                        if(usuarios.get(3).jogo3.voto){
+                            ss.append(usuarios.get(3).jogo3.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(3).jogo3.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p4.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(4).nome);
+                        ss.append(" ");
+                        if(usuarios.get(4).jogo3.voto){
+                            ss.append(usuarios.get(4).jogo3.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(4).jogo3.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p5.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(5).nome);
+                        ss.append(" ");
+                        if(usuarios.get(5).jogo3.voto){
+                            ss.append(usuarios.get(5).jogo3.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(5).jogo3.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p6.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(6).nome);
+                        ss.append(" ");
+                        if(usuarios.get(6).jogo3.voto){
+                            ss.append(usuarios.get(6).jogo3.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(6).jogo3.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p7.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(7).nome);
+                        ss.append(" ");
+                        if(usuarios.get(7).jogo3.voto){
+                            ss.append(usuarios.get(7).jogo3.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(7).jogo3.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p8.setText(ss);
                     }
-                    else ss.append(" - Troxa n votou");
 
-                    p3.setText(ss);
+                    if(numeroJogo == 4){
 
-                    ss = new StringBuilder();
-                    ss.append("");
-                    ss.append(usuarios.get(3).nome);
-                    ss.append(" ");
-                    if(usuarios.get(3).voto) {
-                        ss.append(usuarios.get(3).time1);
-                        ss.append(" x ");
-                        ss.append(usuarios.get(3).time2);
+                        ss = new StringBuilder();
+
+                        ss.append("");
+                        ss.append(usuarios.get(0).nome);
+                        ss.append(" ");
+                        if(usuarios.get(0).jogo4.voto){
+                            ss.append(usuarios.get(0).jogo4.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(0).jogo4.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p1.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(1).nome);
+                        ss.append(" ");
+                        if(usuarios.get(1).jogo4.voto){
+                            ss.append(usuarios.get(1).jogo4.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(1).jogo4.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p2.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(2).nome);
+                        ss.append(" ");
+                        if(usuarios.get(2).jogo4.voto){
+                            ss.append(usuarios.get(2).jogo4.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(2).jogo4.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p3.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(3).nome);
+                        ss.append(" ");
+                        if(usuarios.get(3).jogo4.voto){
+                            ss.append(usuarios.get(3).jogo4.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(3).jogo4.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p4.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(4).nome);
+                        ss.append(" ");
+                        if(usuarios.get(4).jogo4.voto){
+                            ss.append(usuarios.get(4).jogo4.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(4).jogo4.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p5.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(5).nome);
+                        ss.append(" ");
+                        if(usuarios.get(5).jogo4.voto){
+                            ss.append(usuarios.get(5).jogo4.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(5).jogo4.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p6.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(6).nome);
+                        ss.append(" ");
+                        if(usuarios.get(6).jogo4.voto){
+                            ss.append(usuarios.get(6).jogo4.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(6).jogo4.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p7.setText(ss);
+
+                        ss = new StringBuilder();
+                        ss.append("");
+                        ss.append(usuarios.get(7).nome);
+                        ss.append(" ");
+                        if(usuarios.get(7).jogo4.voto){
+                            ss.append(usuarios.get(7).jogo4.t1);
+                            ss.append(" x ");
+                            ss.append(usuarios.get(7).jogo4.t2);
+                        }
+                        else ss.append(" - Troxa n votou");
+
+                        p8.setText(ss);
                     }
-                    else ss.append(" - Troxa n votou");
-
-                    p4.setText(ss);
-
-                    ss = new StringBuilder();
-                    ss.append("");
-                    ss.append(usuarios.get(4).nome);
-                    ss.append(" ");
-                    if(usuarios.get(4).voto) {
-                        ss.append(usuarios.get(4).time1);
-                        ss.append(" x ");
-                        ss.append(usuarios.get(4).time2);
-                    }
-                    else ss.append(" - Troxa n votou");
-
-                    p5.setText(ss);
-
-                    ss = new StringBuilder();
-                    ss.append("");
-                    ss.append(usuarios.get(5).nome);
-                    ss.append(" ");
-                    if(usuarios.get(5).voto) {
-                        ss.append(usuarios.get(5).time1);
-                        ss.append(" x ");
-                        ss.append(usuarios.get(5).time2);
-                    }
-                    else ss.append(" - Troxa n votou");
-
-                    p6.setText(ss);
-
-                    ss = new StringBuilder();
-                    ss.append("");
-                    ss.append(usuarios.get(6).nome);
-                    ss.append(" ");
-                    if(usuarios.get(6).voto) {
-                        ss.append(usuarios.get(6).time1);
-                        ss.append(" x ");
-                        ss.append(usuarios.get(6).time2);
-                    }
-                    else ss.append(" - Troxa n votou");
-
-                    p7.setText(ss);
-
-                    ss = new StringBuilder();
-                    ss.append("");
-                    ss.append(usuarios.get(7).nome);
-                    ss.append(" ");
-                    if(usuarios.get(7).voto) {
-                        ss.append(usuarios.get(7).time1);
-                        ss.append(" x ");
-                        ss.append(usuarios.get(7).time2);
-                    }
-                    else ss.append(" - Troxa n votou");
-
-                    p8.setText(ss);
 
                     mProgressDialog.dismiss();
-
                 }
             }
 

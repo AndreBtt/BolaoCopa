@@ -42,6 +42,8 @@ public class aposta extends AppCompatActivity {
 
     private Usuario usuarioAtual;
 
+    private int numeroJogo;
+
     private DatabaseReference mBanco = FirebaseDatabase.getInstance().getReference("/Usuario");
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -84,11 +86,29 @@ public class aposta extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                usuarioAtual.time1 = Integer.parseInt(mGol1.getText().toString());
+                if(numeroJogo == 1) {
+                    usuarioAtual.jogo1.t1 = Integer.parseInt(mGol1.getText().toString());
+                    usuarioAtual.jogo1.t2 = Integer.parseInt(mGol2.getText().toString());
+                    usuarioAtual.jogo1.voto = true;
+                }
 
-                usuarioAtual.time2 = Integer.parseInt(mGol2.getText().toString());
+                if(numeroJogo == 2) {
+                    usuarioAtual.jogo2.t1 = Integer.parseInt(mGol1.getText().toString());
+                    usuarioAtual.jogo2.t2 = Integer.parseInt(mGol2.getText().toString());
+                    usuarioAtual.jogo2.voto = true;
+                }
 
-                usuarioAtual.voto = true;
+                if(numeroJogo == 3) {
+                    usuarioAtual.jogo3.t1 = Integer.parseInt(mGol1.getText().toString());
+                    usuarioAtual.jogo3.t2 = Integer.parseInt(mGol2.getText().toString());
+                    usuarioAtual.jogo3.voto = true;
+                }
+
+                if(numeroJogo == 4) {
+                    usuarioAtual.jogo4.t1 = Integer.parseInt(mGol1.getText().toString());
+                    usuarioAtual.jogo4.t2 = Integer.parseInt(mGol2.getText().toString());
+                    usuarioAtual.jogo4.voto = true;
+                }
 
                 mBanco.child(chave).setValue(usuarioAtual);
 
@@ -100,10 +120,12 @@ public class aposta extends AppCompatActivity {
 
         t1 = "";
         t2 = "";
+        numeroJogo = 0;
 
         if(b != null){
             t1 = b.getString("t1");
             t2 = b.getString("t2");
+            numeroJogo = b.getInt("numeroJogo");
         }
 
         mNomeT1.setText(t1);
@@ -127,8 +149,32 @@ public class aposta extends AppCompatActivity {
 
                     usuarioAtual = novo;
 
-                    mGol1.setText(Integer.toString(novo.time1));
-                    mGol2.setText(Integer.toString(novo.time2));
+                    int gol1,gol2;
+
+                    gol1 = gol2 = 0;
+
+                    if(numeroJogo == 1) {
+                        gol1 = usuarioAtual.jogo1.t1;
+                        gol2 = usuarioAtual.jogo1.t2;
+                    }
+
+                    if(numeroJogo == 2) {
+                        gol1 = usuarioAtual.jogo2.t1;
+                        gol2 = usuarioAtual.jogo2.t2;
+                    }
+
+                    if(numeroJogo == 3) {
+                        gol1 = usuarioAtual.jogo3.t1;
+                        gol2 = usuarioAtual.jogo3.t2;
+                    }
+
+                    if(numeroJogo == 4) {
+                        gol1 = usuarioAtual.jogo4.t1;
+                        gol2 = usuarioAtual.jogo4.t2;
+                    }
+
+                    mGol1.setText(Integer.toString(gol1));
+                    mGol2.setText(Integer.toString(gol2));
 
                     mProgressDialog.dismiss();
                 }

@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+import Model.JogoUsuario;
 import Model.Usuario;
 
 public class configuracoes extends AppCompatActivity {
@@ -45,6 +46,10 @@ public class configuracoes extends AppCompatActivity {
                 final int gol1 = Integer.parseInt( ((EditText) findViewById(R.id.g1)).getText().toString());
                 final int gol2 = Integer.parseInt( ((EditText) findViewById(R.id.g2)).getText().toString());
 
+                EditText num = findViewById(R.id.numero);
+
+                final int numero = Integer.parseInt(num.getText().toString());
+
                 // 1 se t1 ganhou
                 // 2 se t2 ganhou
                 // 0 se empate
@@ -63,28 +68,96 @@ public class configuracoes extends AppCompatActivity {
 
                         if(usuarios.size() == 8){
 
-                            for(int i = 0; i < 8; i++){
+                            if(numero == 1){
 
-                                if(usuarios.get(i).voto == false) continue;
+                                for(int i = 0; i < 8; i++){
 
-                                int t1 = usuarios.get(i).time1;
-                                int t2 = usuarios.get(i).time2;
+                                    if(usuarios.get(i).jogo1.voto == false) continue;
 
-                                int venceuAux;
+                                    int t1 = usuarios.get(i).jogo1.t1;
+                                    int t2 = usuarios.get(i).jogo1.t2;
 
-                                if(t1 > t2) venceuAux = 1;
-                                else if(t1 < t2) venceuAux = 2;
-                                else venceuAux = 0;
+                                    int venceuAux;
 
-                                if(t1 == gol1 && t2 == gol2) usuarios.get(i).pontos += 5;
+                                    if(t1 > t2) venceuAux = 1;
+                                    else if(t1 < t2) venceuAux = 2;
+                                    else venceuAux = 0;
 
-                                else if(venceuAux == venceu) usuarios.get(i).pontos += 3;
+                                    if(t1 == gol1 && t2 == gol2) usuarios.get(i).pontos += 5;
 
-                                usuarios.get(i).time1 = 0;
-                                usuarios.get(i).time2 = 0;
-                                usuarios.get(i).voto = false;
+                                    else if(venceuAux == venceu) usuarios.get(i).pontos += 3;
 
-                                mBancoUsuario.child(Integer.toString(i+1)).setValue(usuarios.get(i));
+                                    mBancoUsuario.child(Integer.toString(i+1)).setValue(usuarios.get(i));
+                                }
+                            }
+
+                            if(numero == 2){
+
+                                for(int i = 0; i < 8; i++){
+
+                                    if(usuarios.get(i).jogo1.voto == false) continue;
+
+                                    int t1 = usuarios.get(i).jogo2.t1;
+                                    int t2 = usuarios.get(i).jogo2.t2;
+
+                                    int venceuAux;
+
+                                    if(t1 > t2) venceuAux = 1;
+                                    else if(t1 < t2) venceuAux = 2;
+                                    else venceuAux = 0;
+
+                                    if(t1 == gol1 && t2 == gol2) usuarios.get(i).pontos += 5;
+
+                                    else if(venceuAux == venceu) usuarios.get(i).pontos += 3;
+
+                                    mBancoUsuario.child(Integer.toString(i+1)).setValue(usuarios.get(i));
+                                }
+                            }
+
+                            if(numero == 3){
+
+                                for(int i = 0; i < 8; i++){
+
+                                    if(usuarios.get(i).jogo1.voto == false) continue;
+
+                                    int t1 = usuarios.get(i).jogo3.t1;
+                                    int t2 = usuarios.get(i).jogo3.t2;
+
+                                    int venceuAux;
+
+                                    if(t1 > t2) venceuAux = 1;
+                                    else if(t1 < t2) venceuAux = 2;
+                                    else venceuAux = 0;
+
+                                    if(t1 == gol1 && t2 == gol2) usuarios.get(i).pontos += 5;
+
+                                    else if(venceuAux == venceu) usuarios.get(i).pontos += 3;
+
+                                    mBancoUsuario.child(Integer.toString(i+1)).setValue(usuarios.get(i));
+                                }
+                            }
+
+                            if(numero == 4){
+
+                                for(int i = 0; i < 8; i++){
+
+                                    if(usuarios.get(i).jogo1.voto == false) continue;
+
+                                    int t1 = usuarios.get(i).jogo4.t1;
+                                    int t2 = usuarios.get(i).jogo4.t2;
+
+                                    int venceuAux;
+
+                                    if(t1 > t2) venceuAux = 1;
+                                    else if(t1 < t2) venceuAux = 2;
+                                    else venceuAux = 0;
+
+                                    if(t1 == gol1 && t2 == gol2) usuarios.get(i).pontos += 5;
+
+                                    else if(venceuAux == venceu) usuarios.get(i).pontos += 3;
+
+                                    mBancoUsuario.child(Integer.toString(i+1)).setValue(usuarios.get(i));
+                                }
                             }
 
                             startActivity(new Intent(configuracoes.this, principal.class));
@@ -111,15 +184,20 @@ public class configuracoes extends AppCompatActivity {
 
                     }
                 });
-
-
             }
         });
 
         fim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mBanco.child("1").child("fim").setValue(true);
+
+                EditText num = findViewById(R.id.numero);
+
+                String numero = num.getText().toString();
+
+                mBanco.child(numero).child("fim").setValue(true);
+
+                startActivity(new Intent(configuracoes.this, principal.class));
             }
         });
 
@@ -127,18 +205,44 @@ public class configuracoes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                EditText num = findViewById(R.id.numero);
+
+                String numero = num.getText().toString();
+
+                if(numero.equals("1")){
+
+                    for(int i = 1; i <= 8; i++) {
+
+                        String index = Integer.toString(i);
+
+                        mBancoUsuario.child(index).child("jogo1").setValue(new JogoUsuario(true));
+                        mBancoUsuario.child(index).child("jogo2").setValue(new JogoUsuario(true));
+                        mBancoUsuario.child(index).child("jogo3").setValue(new JogoUsuario(true));
+                        mBancoUsuario.child(index).child("jogo4").setValue(new JogoUsuario(true));
+                    }
+                }
+
                 String t1 = ((EditText) findViewById(R.id.t1)).getText().toString();
 
                 String t2 = ((EditText) findViewById(R.id.t2)).getText().toString();
 
-                mBanco.child("1").child("fim").setValue(false);
-                mBanco.child("1").child("t1").setValue(t1);
-                mBanco.child("1").child("t2").setValue(t2);
+                mBanco.child(numero).child("fim").setValue(false);
+                mBanco.child(numero).child("t1").setValue(t1);
+                mBanco.child(numero).child("t2").setValue(t2);
 
                 startActivity(new Intent(configuracoes.this, principal.class));
-
             }
         });
+    }
 
+    void LimparBanco(){
+        mBancoUsuario.child("1").setValue(new Usuario("Rafa", "rafael@unb.com"));
+        mBancoUsuario.child("2").setValue(new Usuario("Andrezinho", "andre@unb.com"));
+        mBancoUsuario.child("3").setValue(new Usuario("Nonato", "arthur@unb.com"));
+        mBancoUsuario.child("4").setValue(new Usuario("Pedrão", "pedro@unb.com"));
+        mBancoUsuario.child("5").setValue(new Usuario("Marcão", "marcos@unb.com"));
+        mBancoUsuario.child("6").setValue(new Usuario("Valim", "vitor@unb.com"));
+        mBancoUsuario.child("7").setValue(new Usuario("Fetu", "alfredo@unb.com"));
+        mBancoUsuario.child("8").setValue(new Usuario("Skilo", "alexandre@unb.com"));
     }
 }
