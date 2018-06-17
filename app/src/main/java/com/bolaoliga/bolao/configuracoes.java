@@ -195,6 +195,8 @@ public class configuracoes extends AppCompatActivity {
 
                 String numero = num.getText().toString();
 
+                //LimparBanco();
+
                 mBanco.child(numero).child("fim").setValue(true);
 
                 startActivity(new Intent(configuracoes.this, principal.class));
