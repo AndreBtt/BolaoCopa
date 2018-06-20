@@ -106,11 +106,7 @@ public class preAposta extends AppCompatActivity {
                 proxima_pagina.putExtra("t2",jogos.get(0).t2);
                 proxima_pagina.putExtra("numeroJogo", 1);
 
-                if(!jogos.get(0).fim) startActivity(proxima_pagina);
-                else{
-                    Toast.makeText(preAposta.this, "Tu acha que eu sou troxa ?? Quer votar no meio do jogo ??",
-                            Toast.LENGTH_SHORT).show();
-                }
+                startActivity(proxima_pagina);
             }
         });
 
@@ -124,12 +120,7 @@ public class preAposta extends AppCompatActivity {
                 proxima_pagina.putExtra("t2",jogos.get(1).t2);
                 proxima_pagina.putExtra("numeroJogo", 2);
 
-
-                if(!jogos.get(1).fim) startActivity(proxima_pagina);
-                else{
-                    Toast.makeText(preAposta.this, "Tu acha que eu sou troxa ?? Quer votar no meio do jogo ??",
-                            Toast.LENGTH_SHORT).show();
-                }
+                startActivity(proxima_pagina);
             }
         });
 
@@ -143,12 +134,7 @@ public class preAposta extends AppCompatActivity {
                 proxima_pagina.putExtra("t2",jogos.get(2).t2);
                 proxima_pagina.putExtra("numeroJogo", 3);
 
-
-                if(!jogos.get(2).fim) startActivity(proxima_pagina);
-                else{
-                    Toast.makeText(preAposta.this, "Tu acha que eu sou troxa ?? Quer votar no meio do jogo ??",
-                            Toast.LENGTH_SHORT).show();
-                }
+                startActivity(proxima_pagina);
             }
         });
 
@@ -162,11 +148,7 @@ public class preAposta extends AppCompatActivity {
                 proxima_pagina.putExtra("t2",jogos.get(3).t2);
                 proxima_pagina.putExtra("numeroJogo", 4);
 
-                if(!jogos.get(3).fim) startActivity(proxima_pagina);
-                else{
-                    Toast.makeText(preAposta.this, "Tu acha que eu sou troxa ?? Quer votar no meio do jogo ??",
-                            Toast.LENGTH_SHORT).show();
-                }
+                startActivity(proxima_pagina);
             }
         });
 

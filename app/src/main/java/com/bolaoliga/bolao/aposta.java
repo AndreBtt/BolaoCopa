@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +25,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
+import Model.Jogo;
 import Model.Usuario;
 
 public class aposta extends AppCompatActivity {
@@ -43,6 +45,8 @@ public class aposta extends AppCompatActivity {
     private Usuario usuarioAtual;
 
     private int numeroJogo;
+
+    private DatabaseReference mBancoJogo = FirebaseDatabase.getInstance().getReference("/Jogo");
 
     private DatabaseReference mBanco = FirebaseDatabase.getInstance().getReference("/Usuario");
 
@@ -86,33 +90,93 @@ public class aposta extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(numeroJogo == 1) {
-                    usuarioAtual.jogo1.t1 = Integer.parseInt(mGol1.getText().toString());
-                    usuarioAtual.jogo1.t2 = Integer.parseInt(mGol2.getText().toString());
-                    usuarioAtual.jogo1.voto = true;
-                }
+                final List<Jogo> jogos = new ArrayList<>();
 
-                if(numeroJogo == 2) {
-                    usuarioAtual.jogo2.t1 = Integer.parseInt(mGol1.getText().toString());
-                    usuarioAtual.jogo2.t2 = Integer.parseInt(mGol2.getText().toString());
-                    usuarioAtual.jogo2.voto = true;
-                }
+                mBancoJogo.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                        Jogo novo = dataSnapshot.getValue(Jogo.class);
 
-                if(numeroJogo == 3) {
-                    usuarioAtual.jogo3.t1 = Integer.parseInt(mGol1.getText().toString());
-                    usuarioAtual.jogo3.t2 = Integer.parseInt(mGol2.getText().toString());
-                    usuarioAtual.jogo3.voto = true;
-                }
+                        jogos.add(novo);
 
-                if(numeroJogo == 4) {
-                    usuarioAtual.jogo4.t1 = Integer.parseInt(mGol1.getText().toString());
-                    usuarioAtual.jogo4.t2 = Integer.parseInt(mGol2.getText().toString());
-                    usuarioAtual.jogo4.voto = true;
-                }
+                        if(jogos.size() == 4){
 
-                mBanco.child(chave).setValue(usuarioAtual);
+                            if(numeroJogo == 1) {
+                                if(jogos.get(0).fim){
+                                    Toast.makeText(aposta.this, "Pode votar mais nao, brother",
+                                            Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                                usuarioAtual.jogo1.t1 = Integer.parseInt(mGol1.getText().toString());
+                                usuarioAtual.jogo1.t2 = Integer.parseInt(mGol2.getText().toString());
+                                usuarioAtual.jogo1.voto = true;
+                            }
 
-                startActivity(new Intent(aposta.this, principal.class));
+                            if(numeroJogo == 2) {
+                                if(jogos.get(1).fim){
+                                    Toast.makeText(aposta.this, "Não vai roubar nao !!",
+                                            Toast.LENGTH_SHORT).show();
+
+                                    return;
+                                }
+                                usuarioAtual.jogo2.t1 = Integer.parseInt(mGol1.getText().toString());
+                                usuarioAtual.jogo2.t2 = Integer.parseInt(mGol2.getText().toString());
+                                usuarioAtual.jogo2.voto = true;
+                            }
+
+                            if(numeroJogo == 3) {
+                                if(jogos.get(2).fim){
+                                    Toast.makeText(aposta.this, "Não vai roubar nao !!",
+                                            Toast.LENGTH_SHORT).show();
+
+                                    return;
+                                }
+                                usuarioAtual.jogo3.t1 = Integer.parseInt(mGol1.getText().toString());
+                                usuarioAtual.jogo3.t2 = Integer.parseInt(mGol2.getText().toString());
+                                usuarioAtual.jogo3.voto = true;
+                            }
+
+                            if(numeroJogo == 4) {
+                                if(jogos.get(3).fim){
+                                    Toast.makeText(aposta.this, "Não vai roubar nao !!",
+                                            Toast.LENGTH_SHORT).show();
+
+                                    return;
+                                }
+                                usuarioAtual.jogo4.t1 = Integer.parseInt(mGol1.getText().toString());
+                                usuarioAtual.jogo4.t2 = Integer.parseInt(mGol2.getText().toString());
+                                usuarioAtual.jogo4.voto = true;
+                            }
+
+                            mBanco.child(chave).setValue(usuarioAtual);
+
+                            startActivity(new Intent(aposta.this, principal.class));
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
 
